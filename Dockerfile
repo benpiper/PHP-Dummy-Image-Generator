@@ -18,4 +18,4 @@ RUN apt-get update && \
 		gd && \
 	a2enmod rewrite
 
-COPY . /var/www/html/
+COPY index.php /var/www/html/
