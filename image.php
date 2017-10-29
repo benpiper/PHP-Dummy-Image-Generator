@@ -22,6 +22,7 @@ $strSize  = (($strSize = $_GET['size'])   ? strtolower($strSize)  : NULL);
 $strType  = (($strType = $_GET['type'])   ? strtolower($strType)  : 'png');
 $strBg    = (($strBg = $_GET['bg'])       ? strtolower($strBg)    : '000000');
 $strColor = (($strColor = $_GET['color']) ? strtolower($strColor) : 'ffffff');
+$strText  = (($strText = $_GET['text'])   ? strtolower($strText)  : 'undefined');
 
 // Now let's check the parameters.
 if ($strSize == NULL) {
@@ -38,7 +39,7 @@ if (strlen($strColor) != 6 and strlen($strColor) != 3) {
 }
 
 // Get width and height from current size.
-list($strWidth, $strHeight) = split('x', $strSize);
+list($strWidth, $strHeight) = explode('x', $strSize);
 // If no height is given, we'll return a squared picture.
 if ($strHeight == NULL) $strHeight = $strWidth;
 
@@ -49,11 +50,11 @@ if (ctype_digit($strWidth) and ctype_digit($strHeight)) {
 		die('<b>The maximum picture size can be 9999x9999px.</b>');
 	}
 
-	// Let's define the font (size. And NEVER go above 9).
-	$intFontSize = $strWidth / 16;
+	// Let's define the font size. And NEVER go above 9.
+	$strScale = 8;
+	$intFontSize = $strWidth / $strScale;
 	if ($intFontSize < 9) $intFontSize = 9;
 	$strFont = "DroidSansMono.ttf";
-	$strText = $strWidth . 'x' . $strHeight;
 
 	// Create the picture.
 	$objImg = @imagecreatetruecolor($strWidth, $strHeight) or die('Sorry, there is a problem with the GD lib.');
