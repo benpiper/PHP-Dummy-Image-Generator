@@ -1,3 +1,5 @@
 Dockerfile
 README.md
 *.bak
+.gitignore
+.dockerignore
