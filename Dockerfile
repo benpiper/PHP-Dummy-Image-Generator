@@ -1,5 +1,7 @@
 FROM php:7.0-apache
 
+LABEL maintainer="ben@benpiper.com"
+
 RUN apt-get update && \
 	apt-get install -y --no-install-recommends \
 		libfreetype6-dev \
@@ -18,4 +20,4 @@ RUN apt-get update && \
 		gd && \
 	a2enmod rewrite
 
-COPY index.php /var/www/html/
+COPY . /var/www/html/
