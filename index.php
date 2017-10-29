@@ -5,10 +5,10 @@
  * You can create dummy images with this script kinda easily. Just provide at least the size parameter, that's it.
  * Examples:
  *
- * image.php?size=250x850&type=jpg&bg=ff8800&color=000000
+ * index.php?size=250x850&type=jpg&bg=ff8800&color=000000
  * - will create a 250px width, 800px height jpg image with orange background and black text
  *
- * image.php?size=250
+ * index.php?size=250
  * - will create a 250px width, 250px height png image with black background and white text
  *
  * Original idea and script by Russel Heimlich (see http://DummyImage.com). Rewritten by Fabian Beiner.
