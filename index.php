@@ -18,11 +18,11 @@
  */
 
 // Handle the parameters.
-$strSize  = (($strSize = $_GET['size'])   ? strtolower($strSize)  : NULL);
+$strSize  = (($strSize = $_GET['size'])   ? strtolower($strSize)  : '300x100'); //WxH
 $strType  = (($strType = $_GET['type'])   ? strtolower($strType)  : 'png');
 $strBg    = (($strBg = $_GET['bg'])       ? strtolower($strBg)    : '000000');
 $strColor = (($strColor = $_GET['color']) ? strtolower($strColor) : 'ffffff');
-$strText  = (($strText = $_GET['text'])   ? strtolower($strText)  : 'undefined');
+$strText  = (($strText = $_GET['text'])   ? strtolower($strText)  : gethostname());
 
 // Now let's check the parameters.
 if ($strSize == NULL) {
